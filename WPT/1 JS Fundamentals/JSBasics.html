@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript OOP — Professional Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f5fa;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4b6cb7, #182848);
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: .9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            border-left: 6px solid #3498db;
+            padding-left: 10px;
+            color: #2c3e50;
+        }
+
+        .section p {
+            margin-bottom: 14px;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 14px;
+            border: 1px solid #0f172a;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+
+        /* Syntax Highlighting */
+        .keyword {
+            color: #c678dd;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #98c379;
+        }
+
+        .number {
+            color: #d19a66;
+        }
+
+        .comment {
+            color: #5c6370;
+            font-style: italic;
+        }
+
+        .function {
+            color: #61afef;
+        }
+
+        .property {
+            color: #e06c75;
+        }
+
+        .operator {
+            color: #56b6c2;
+        }
+
+        .variable {
+            color: #e5c07b;
+        }
+
+        .this {
+            color: #c678dd;
+            font-style: italic;
+        }
+
+        .note {
+            background: #fff9d6;
+            border-left: 6px solid #f1c40f;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 12px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #555;
+        }
+
+        @media(max-width:800px) {
+            header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Object-Oriented Programming</h1>
+        <p>A Complete Professional Tutorial — Code + Explanation</p>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION 1 -->
+        <div class="section">
+            <h2>1. Object Creation — using Object Class</h2>
+            <p>This code creates objects using the Object constructor.</p>
+            <pre><code><span class="comment">// Object Class</span>
+
+<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="function">Object</span>();     <span class="comment">// object Creation</span>
+obj.<span class="property">name</span> = <span class="string">"vita"</span>;      <span class="comment">// add fields with value</span>
+obj.<span class="property">marks</span> = <span class="number">90</span>;
+
+<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="function">Object</span>();
+obj.<span class="property">name</span> = <span class="string">"vita"</span>;
+obj.<span class="property">marks</span> = <span class="number">90</span>;
+
+document.<span class="function">write</span>(obj);        <span class="comment">// "object(type) Object(Class Name)"</span>
+document.<span class="function">write</span>(obj.<span class="property">constructor</span>);    <span class="comment">// function Object() {[Native Code]}</span>
+console.<span class="function">log</span>(obj);       <span class="comment">// Print last state of obj</span></code></pre>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section">
+            <h2>2. Object Literal</h2>
+            <p>This demonstrates creating objects using literal syntax.</p>
+            <pre><code><span class="comment">// Literal Object</span>
+
+<span class="keyword">var</span> obj = { <span class="property">name</span>: <span class="string">"Girish"</span>, <span class="string">"2division"</span>: <span class="string">"A"</span> };
+obj.<span class="property">marks</span> = <span class="number">80</span>;
+
+console.<span class="function">log</span>(obj);   <span class="comment">// {name: 'Girish', 2division: 'A', marks: 80}</span>
+document.<span class="function">write</span>(<span class="string">"&lt;br&gt;"</span> + obj.<span class="property">name</span>);   <span class="comment">// Prints Girish</span>
+document.<span class="function">write</span>(<span class="string">"&lt;br&gt;"</span> + obj[<span class="string">"2division"</span>]);      <span class="comment">// Prints A</span>
+console.<span class="function">log</span>(obj.<span class="property">name</span>);  <span class="comment">// Prints Girish in Console</span></code></pre>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section">
+            <h2>3. Functions as Classes (Constructor Functions)</h2>
+            <p>This explains how constructor functions work in strict mode.</p>
+            <pre><code><span class="comment">// Function as Classes</span>
+
+<span class="string">'use strict'</span>;   <span class="comment">// Without strict, variables become members of window class</span>
+
+<span class="keyword">function</span> <span class="function">person</span>(nm, mks) {
+    <span class="this">this</span>.<span class="property">name</span> = nm;
+    <span class="this">this</span>.<span class="property">marks</span> = mks;
+}
+
+<span class="keyword">var</span> ob = <span class="keyword">new</span> <span class="function">person</span>(<span class="string">"mona"</span>, <span class="number">80</span>);         
+console.<span class="function">log</span>(<span class="string">"&lt;br&gt;"</span> + ob);</code></pre>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="section">
+            <h2>4. Iterating Object Properties</h2>
+            <p>This loops through object properties.</p>
+            <pre><code><span class="comment">// Iterating property of a class</span>
+
+<span class="keyword">for</span> (<span class="keyword">let</span> i <span class="operator">in</span> ob)
+    document.<span class="function">write</span>(<span class="string">"&lt;br&gt;"</span> + i + <span class="string">" : "</span> + ob[i]) + <span class="string">" --&gt; "</span>;
+
+document.<span class="function">write</span>(<span class="string">"&lt;br&gt; Length of Class: "</span> + person.<span class="property">length</span>);</code></pre>
+        </div>
+
+        <!-- SECTION 5 -->
+        <div class="section">
+            <h2>5. instanceof Operator</h2>
+            <pre><code><span class="comment">// Instance of</span>
+
+ob <span class="keyword">instanceof</span> person  <span class="comment">// true</span>
+ob <span class="keyword">instanceof</span> Object  <span class="comment">// true</span></code></pre>
+        </div>
+
+        <!-- SECTION 6 -->
+        <div class="section">
+            <h2>6. Shallow Copy</h2>
+            <pre><code><span class="comment">// Shallow Copy</span>
+
+<span class="keyword">var</span> cpy = ob;
+cpy.<span class="property">name</span> = <span class="string">"geeta"</span>;
+
+document.<span class="function">write</span>(ob.<span class="property">name</span>);   <span class="comment">// prints geeta</span></code></pre>
+        </div>
+
+        <!-- SECTION 7 -->
+        <div class="section">
+            <h2>7. Object.assign()</h2>
+            <pre><code><span class="comment">// Object.assign()</span>
+
+<span class="keyword">const</span> target = { <span class="property">a</span>: <span class="number">1</span>, <span class="property">b</span>: <span class="number">2</span> };
+<span class="keyword">const</span> source = { <span class="property">b</span>: <span class="number">4</span>, <span class="property">c</span>: <span class="number">5</span> };
+
+<span class="keyword">const</span> returnedTarget = Object.<span class="function">assign</span>(target, source);
+
+console.<span class="function">log</span>(target);
+console.<span class="function">log</span>(returnedTarget === target);
+
+<span class="keyword">const</span> user = {
+    <span class="property">name</span>: <span class="string">'Alex'</span>,
+    <span class="property">address</span>: { <span class="property">dd</span>: <span class="string">"juhu"</span> },
+    <span class="property">age</span>: <span class="number">43</span>
+};
+
+<span class="keyword">const</span> clone = {};
+<span class="keyword">const</span> returnedUser = Object.<span class="function">assign</span>(clone, user);</code></pre>
+        </div>
+
+        <!-- SECTION 8 -->
+        <div class="section">
+            <h2>8. Spread Operator</h2>
+            <pre><code><span class="comment">// Spread obj</span>
+
+<span class="keyword">const</span> User2 = {
+    <span class="string">'name'</span>: <span class="string">'Alex'</span>,
+    <span class="string">'address'</span>: <span class="string">'15th Park Avenue'</span>,
+    <span class="string">'age'</span>: <span class="number">43</span>
+}
+<span class="keyword">const</span> User2Clone = { <span class="operator">...</span>User2 }
+
+User2Clone === User2;
+
+<span class="keyword">const</span> addpropertyUser = { <span class="operator">...</span>user, <span class="property">salary</span>: <span class="number">12345</span> }; 
+console.<span class="function">log</span>(User2);
+console.<span class="function">log</span>(addpropertyUser);
+
+<span class="keyword">const</span> updatedUser = { <span class="operator">...</span>user, <span class="property">age</span>: <span class="number">56</span> };
+console.<span class="function">log</span>(User2);
+console.<span class="function">log</span>(updatedUser);</code></pre>
+        </div>
+
+        <!-- SECTION 9 -->
+        <div class="section">
+            <h2>9. Methods in Literal Objects</h2>
+            <pre><code><span class="comment">// Methods in Literal Objects</span>
+<span class="keyword">var</span> obj = {
+    <span class="property">fname</span>: <span class="string">"Raj"</span>,
+    <span class="property">lname</span>: <span class="string">"Mathur"</span>,
+    <span class="property">age</span>: <span class="number">25</span>,
+    <span class="property">add</span>: { <span class="property">d</span>: <span class="string">"juhu"</span> },
+
+    <span class="function">fullname</span>: <span class="keyword">function</span> () {
+        <span class="keyword">return</span> <span class="this">this</span>.<span class="property">fname</span> + <span class="string">" "</span> + <span class="this">this</span>.<span class="property">lname</span>;
+    },
+
+    <span class="function">toString</span>: <span class="keyword">function</span> () {
+        <span class="keyword">return</span> <span class="this">this</span>.<span class="function">fullname</span>() + <span class="string">" "</span> + <span class="this">this</span>.<span class="property">age</span> + <span class="string">" "</span> + <span class="this">this</span>.<span class="property">add</span>.<span class="property">d</span>;
+    }
+};
+
+<span class="keyword">var</span> f = obj.<span class="function">fullname</span>();
+document.<span class="function">write</span>(<span class="string">"&lt;br&gt;"</span> + f);
+document.<span class="function">write</span>(<span class="string">"&lt;br&gt;"</span> + obj);
+document.<span class="function">write</span>(<span class="string">"&lt;br&gt;"</span> + obj.<span class="function">toString</span>());</code></pre>
+        </div>
+
+        <!-- SECTION 10 -->
+        <div class="section">
+            <h2>10. Constructor + Prototype Methods</h2>
+            <pre><code><span class="comment">// Adding Methods to Constructor Objects</span>
+<span class="keyword">function</span> <span class="function">person</span>(nm, ag) {
+    <span class="this">this</span>.<span class="property">name</span> = nm;
+    <span class="this">this</span>.<span class="property">age</span> = ag;
+    <span class="this">this</span>.<span class="property">speak</span> = <span class="keyword">function</span> () {
+        <span class="keyword">return</span> <span class="string">" hello "</span> + <span class="this">this</span>.<span class="property">name</span>;
+    }
+    <span class="function">alert</span>(<span class="this">this</span>.<span class="property">constructor</span>);
+}
+
+person.<span class="property">prototype</span>.<span class="function">walk</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="this">this</span>.<span class="property">name</span> + <span class="string">" can walk "</span>;
+};
+
+person.<span class="property">prototype</span>.<span class="function">toString</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="this">this</span>.<span class="property">name</span> + <span class="string">" "</span> + <span class="this">this</span>.<span class="property">age</span>;
+};
+
+<span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="function">person</span>(<span class="string">"raj"</span>, <span class="number">80</span>);
+<span class="keyword">var</span> x = <span class="keyword">new</span> <span class="function">person</span>(<span class="string">"mona"</span>, <span class="number">90</span>);
+
+document.<span class="function">write</span>(obj1);
+document.<span class="function">write</span>(obj1.<span class="function">speak</span>());</code></pre>
+        </div>
+
+        <!-- SECTION 11 -->
+        <div class="section">
+            <h2>11. Old Style Inheritance</h2>
+            <pre><code><span class="comment">// Inheritance (older syntax – before ES6 'extends')</span>
+
+<span class="string">"use strict"</span>;
+<span class="keyword">function</span> <span class="function">person</span>(nm, ag) {
+    <span class="keyword">if</span> (<span class="this">this</span> <span class="keyword">instanceof</span> person) {
+        <span class="this">this</span>.<span class="property">name</span> = nm;
+        <span class="this">this</span>.<span class="property">age</span> = ag;
+        <span class="this">this</span>.<span class="property">speak</span> = <span class="keyword">function</span> () {
+            <span class="keyword">return</span> <span class="string">"hello"</span>;
+        };
+        <span class="function">alert</span>(<span class="this">this</span>.<span class="property">constructor</span>);
+        <span class="keyword">return</span> <span class="this">this</span>;
+    }
+    <span class="keyword">else</span> {
+        <span class="keyword">throw new</span> <span class="function">TypeError</span>(<span class="string">"Check this is not a function"</span>);
+    }
+}
+
+person.<span class="property">prototype</span>.<span class="function">display</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="string">"parent classmethod data"</span>;
+};
+
+<span class="keyword">function</span> <span class="function">child</span>() { }
+child.<span class="property">prototype</span> = Object.<span class="function">create</span>(person.<span class="property">prototype</span>);
+<span class="keyword">var</span> c = <span class="keyword">new</span> <span class="function">child</span>();
+
+console.<span class="function">log</span>(c.<span class="function">display</span>());
+document.<span class="function">write</span>(c.<span class="function">display</span>());</code></pre>
+        </div>
+
+        <!-- SECTION 12 -->
+        <div class="section">
+            <h2>12. call() and apply()</h2>
+            <pre><code><span class="comment">// call() & apply()</span>
+
+<span class="keyword">var</span> objperson = {
+    <span class="property">firstName</span>: <span class="string">"John"</span>,
+    <span class="property">lastName</span>: <span class="string">"Doe"</span>,
+    <span class="function">fullName</span>: <span class="keyword">function</span> () {
+        <span class="keyword">return</span> <span class="this">this</span>.<span class="property">firstName</span> + <span class="string">" "</span> + <span class="this">this</span>.<span class="property">lastName</span>;
+    }
+};
+
+<span class="keyword">var</span> person1 = { <span class="property">firstName</span>: <span class="string">"John"</span>, <span class="property">lastName</span>: <span class="string">"Doe"</span> };
+<span class="keyword">var</span> person2 = { <span class="property">firstName</span>: <span class="string">"Mary"</span>, <span class="property">lastName</span>: <span class="string">"Doe"</span> };
+
+objperson.<span class="property">fullName</span>.<span class="function">call</span>(person1);
+objperson.<span class="property">fullName</span>.<span class="function">call</span>(person2);
+
+<span class="keyword">var</span> person = {
+    <span class="function">fullName</span>: <span class="keyword">function</span> (city, country) {
+        <span class="keyword">return</span> <span class="this">this</span>.<span class="property">firstName</span> + <span class="string">" "</span> + <span class="this">this</span>.<span class="property">lastName</span> + <span class="string">","</span> + city + <span class="string">","</span> + country;
+    }
+}
+console.<span class="function">log</span>(person.<span class="property">fullName</span>.<span class="function">apply</span>(person1, [<span class="string">"Mumbai"</span>, <span class="string">"india"</span>]))</code></pre>
+        </div>
+
+        <!-- SECTION 13 -->
+        <div class="section">
+            <h2>13. Inheritance using call() — like super()</h2>
+            <pre><code><span class="comment">// Inheritance (Modern Syntax with call() → behaves like super)</span>
+
+<span class="string">"use strict"</span>
+
+<span class="keyword">function</span> <span class="function">person</span>(nm, ag) {
+    <span class="keyword">if</span> (<span class="this">this</span> <span class="keyword">instanceof</span> person) {
+        <span class="this">this</span>.<span class="property">name</span> = nm;
+        <span class="this">this</span>.<span class="property">age</span> = ag;
+        <span class="function">alert</span>(<span class="this">this</span>.<span class="property">constructor</span>);
+        <span class="keyword">return</span> <span class="this">this</span>;
+    }
+    <span class="keyword">else</span>
+        <span class="keyword">throw new</span> <span class="function">TypeError</span>(<span class="string">"Check this is not a function"</span>);
+}
+
+person.<span class="property">prototype</span>.<span class="function">walk</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="string">" Person can walk "</span>;
+};
+
+<span class="keyword">function</span> <span class="function">child</span>(nm, ag) {
+    person.<span class="function">call</span>(<span class="this">this</span>, nm, ag);
+    
+    <span class="this">this</span>.<span class="property">speak</span> = <span class="keyword">function</span> () {
+        <span class="keyword">return</span> <span class="string">"  o o aa aa....."</span>;
+    };
+}
+
+child.<span class="property">prototype</span> = Object.<span class="function">create</span>(person.<span class="property">prototype</span>);
+
+child.<span class="property">prototype</span>.<span class="function">walk</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="string">"  child can crawl  "</span>;
+};
+
+<span class="keyword">var</span> c = <span class="keyword">new</span> <span class="function">child</span>(<span class="string">"rohan"</span>, <span class="number">60</span>);
+console.<span class="function">log</span>(c);
+document.<span class="function">write</span>(c.<span class="function">walk</span>());</code></pre>
+        </div>
+
+    </div>
+
+    <footer>
+        JavaScript OOP Tutorial — Clean Professional Design
+    </footer>
+
+</body>
+
+</html>
