@@ -30,26 +30,19 @@ This repository serves as a **centralized academic resource hub** for the Post G
 
 ## 📘 Subject Coverage
 
-### 💻 C++ Programming
-Complete coverage of C++ fundamentals, OOP concepts, memory management, STL, and advanced programming techniques.
+### C++ Programming
 
-### 🔷 C# and .NET
-Comprehensive notes on C# language, .NET framework, ASP.NET Core, dependency injection, and enterprise application development.
+### C# and .NET
 
-### ☕ Java (Core & Advanced)
-Detailed materials covering Core Java, Collections, Multithreading, JDBC, Servlets, JSP, and web application development.
+### Java (Core & Advanced)
 
-### 🗄️ MySQL Database
-In-depth coverage of database fundamentals, SQL queries, joins, stored procedures, transactions, indexing, and optimization.
+### MySQL Database
 
-### 🖥️ Operating Systems
-Complete notes on OS fundamentals, process management, memory management, synchronization, deadlocks, and scheduling algorithms.
+### Operating Systems
 
-### 🌐 Web Programming Technologies
-Comprehensive coverage of HTML, CSS, JavaScript, DOM manipulation, jQuery, Bootstrap, and client-server architecture.
+### Software Development Methodology
 
-### 📝 Practice MCQ Bank
-Subject-wise MCQs, mock tests, and interview-oriented questions for examination and placement preparation.
+### Web Programming Technologies
 
 ---
 
